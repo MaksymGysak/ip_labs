@@ -1,154 +1,141 @@
-
 <!DOCTYPE html>
 <html lang="uk">
-
 <head>
     <meta charset="UTF-8">
-    <title>Анкета студента</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4 - Анкета студента</title>
 </head>
-
 <body>
 
     <header>
-        <h1>Анкета студента</h1>
+        <h1>Student card FORM</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Головна</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-
-        <form action="#" method="post" enctype="multipart/form-data">
-
-            <section>
+        <section>
+            <form action="#" method="post" enctype="multipart/form-data">
+                
                 <fieldset>
-                    <legend>Особисті дані</legend>
+                    <legend>Personal Information</legend>
+                    
+                    <p>
+                        <label for="fullname">Full Name:</label><br>
+                        <input type="text" id="fullname" name="fullname" placeholder="Введіть повне ім'я" required>
+                    </p>
 
-                    <label for="fullname">Full Name:</label>
-                    <input type="text" id="fullname" name="fullname" required>
-                    <br><br>
+                    <p>
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+                    </p>
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <br><br>
+                    <p>
+                        <label for="password">Password:</label><br>
+                        <input type="password" id="password" name="password" required>
+                    </p>
 
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-                    <br><br>
+                    <p>
+                        <label for="age">Age:</label><br>
+                        <input type="number" id="age" name="age" min="16" max="100">
+                    </p>
 
-                    <label for="age">Age:</label>
-                    <input type="number" id="age" name="age" min="15" max="100">
-                    <br><br>
+                    <p>
+                        <label for="dob">Date of Birth:</label><br>
+                        <input type="date" id="dob" name="dob">
+                    </p>
 
-                    <label for="birthdate">Date of Birth:</label>
-                    <input type="date" id="birthdate" name="birthdate">
+                    <p>
+                        <label>Gender:</label><br>
+                        <input type="radio" id="gender_male" name="gender" value="Male">
+                        <label for="gender_male">Male</label><br>
+                        <input type="radio" id="gender_female" name="gender" value="Female">
+                        <label for="gender_female">Female</label><br>
+                        <input type="radio" id="gender_other" name="gender" value="Other">
+                        <label for="gender_other">Other</label>
+                    </p>
+
+                    <p>
+                        <label>Languages Known:</label><br>
+                        <input type="checkbox" id="lang_en" name="languages" value="English">
+                        <label for="lang_en">English</label><br>
+                        <input type="checkbox" id="lang_es" name="languages" value="Spanish">
+                        <label for="lang_es">Spanish</label><br>
+                        <input type="checkbox" id="lang_fr" name="languages" value="French">
+                        <label for="lang_fr">French</label>
+                    </p>
+
+                    <p>
+                        <label for="country">Country:</label><br>
+                        <select id="country" name="country">
+                            <option value="">Оберіть країну</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="USA">USA</option>
+                            <option value="UK">UK</option>
+                            <option value="Germany">Germany</option>
+                        </select>
+                    </p>
                 </fieldset>
-            </section>
 
-            <section>
                 <fieldset>
-                    <legend>Gender</legend>
+                    <legend>College Subjects</legend>
+                    
+                    <p>
+                        <label for="subjects">College Subjects (затисніть Ctrl для вибору кількох):</label><br>
+                        <select id="subjects" name="subjects" multiple size="5">
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Physics">Physics</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="English">English</option>
+                        </select>
+                    </p>
 
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label>
-
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label>
-
-                    <input type="radio" id="other" name="gender" value="other">
-                    <label for="other">Other</label>
+                    <p>
+                        <label for="interest">Rate Interest in Computer Science:</label><br>
+                        <input type="range" id="interest" name="interest" min="1" max="10" value="5">
+                    </p>
                 </fieldset>
-            </section>
 
-            <section>
+                <!-- Блок 3: Оцінка навичок -->
                 <fieldset>
-                    <legend>Languages Known</legend>
+                    <legend>Skills Assessment</legend>
 
-                    <input type="checkbox" id="english" name="languages" value="english">
-                    <label for="english">English</label>
+                    <p>
+                        <label for="skills">Describe Skills:</label><br>
+                        <textarea id="skills" name="skills" rows="5" cols="40" placeholder="Опишіть свої навички..."></textarea>
+                    </p>
 
-                    <input type="checkbox" id="spanish" name="languages" value="spanish">
-                    <label for="spanish">Spanish</label>
+                    <p>
+                        <label for="resume">Upload Resume:</label><br>
+                        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+                    </p>
 
-                    <input type="checkbox" id="french" name="languages" value="french">
-                    <label for="french">French</label>
+                    <p>
+                        <label for="favcolor">Pick Favorite Color:</label><br>
+                        <input type="color" id="favcolor" name="favcolor" value="#0000ff">
+                    </p>
+
+                    <p>
+                        <label for="studytime">Preferred Study Time:</label><br>
+                        <input type="time" id="studytime" name="studytime">
+                    </p>
+
+                    <p>
+                        <input type="submit" value="Submit Survey">
+                    </p>
                 </fieldset>
-            </section>
 
-            <section>
-                <fieldset>
-                    <legend>Навчання</legend>
-
-                    <label for="country">Country:</label>
-                    <select id="country" name="country">
-                        <option value="ukraine">Ukraine</option>
-                        <option value="poland">Poland</option>
-                        <option value="germany">Germany</option>
-                        <option value="usa">USA</option>
-                    </select>
-
-                    <br><br>
-
-                    <label for="subjects">College Subjects:</label>
-                    <br>
-
-                    <select id="subjects" name="subjects" multiple>
-                        <option value="mathematics">Mathematics</option>
-                        <option value="computer-science">Computer Science</option>
-                        <option value="physics">Physics</option>
-                        <option value="chemistry">Chemistry</option>
-                        <option value="english">English</option>
-                    </select>
-
-                    <br><br>
-
-                    <label for="interest">
-                        Rate Interest in Computer Science:
-                    </label>
-                    <input
-                        type="range"
-                        id="interest"
-                        name="interest"
-                        min="0"
-                        max="100"
-                        value="50">
-                </fieldset>
-            </section>
-
-            <section>
-                <fieldset>
-                    <legend>Додаткова інформація</legend>
-
-                    <label for="skills">Describe Skills:</label>
-                    <br>
-                    <textarea
-                        id="skills"
-                        name="skills"
-                        rows="5"
-                        cols="40"></textarea>
-
-                    <br><br>
-
-                    <label for="resume">Upload Resume:</label>
-                    <input type="file" id="resume" name="resume">
-
-                    <br><br>
-
-                    <label for="color">Pick Favorite Color:</label>
-                    <input type="color" id="color" name="color">
-
-                    <br><br>
-
-                    <label for="study-time">Preferred Study Time:</label>
-                    <input type="time" id="study-time" name="study-time">
-                </fieldset>
-            </section>
-
-            <section>
-                <input type="submit" value="Submit Survey">
-            </section>
-
-        </form>
-
+            </form>
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; Copyright 2026 by Гусак Максим. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
-
