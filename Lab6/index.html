@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №6 - Плавючі, багатоколонкові та модальні елементи</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Лабораторна робота #6</h1>
+    </header>
+
+    <main class="container">
+   
+        <section class="section">
+            <h2>Секція 1: Обтікання тексту</h2>
+            <div class="clearfix">
+                <img src="img/image.svg" alt="SVG Image" class="float-img">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, felis ut porttitor convallis, velit nisi fringilla nunc, nec malesuada libero nulla sit amet neque. Ut et velit a sapien facilisis viverra. Integer et velit nec odio tincidunt ut porttitor enim eros. Nullam auctor ex quis magna fermentum, eget scelerisque magna vel mi vestibulum, quis ultricies ex faucibus. Vivamus condimentum mi quis magna vehiculo sagittis. Donec at arcu sed nunc sodales posuere. Vestibulum scelerisque id eros non lacinia. Mauris eu risus euismod, congue sapien quis, fermentum felis.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non eros vel nisi dapibus lacinia nec vel augue. Integer scelerisque magna vel mi vestibulum, quis ultricies ex faucibus. Vivamus condimentum mi quis magna vehiculo sagittis. Donec at arcu sed nunc sodales posuere. Vestibulum scelerisque id eros non lacinia. Mauris eu risus euismod, congue sapien quis, fermentum felis.</p>
+            </div>
+        </section>
+
+        <!-- Секція 2: Багатоколонковий макет -->
+        <section class="section">
+            <h2>Секція 2: Багатоколонковий макет</h2>
+            <div class="multicolumn">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, felis ut porttitor convallis, velit nisi fringilla nunc, nec malesuada libero nulla sit amet neque. Ut et velit a sapien facilisis viverra. Integer et velit nec odio tincidunt ut porttitor enim eros. Nullam auctor ex quis magna fermentum, eget scelerisque magna vel mi vestibulum, quis ultricies ex faucibus. Vivamus condimentum mi quis magna vehiculo sagittis. Donec at arcu sed nunc sodales posuere. Vestibulum scelerisque id eros non lacinia. Mauris eu risus euismod, congue sapien quis, fermentum felis.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non eros vel nisi dapibus lacinia nec vel augue. Integer scelerisque magna vel mi vestibulum, quis ultricies ex faucibus. Vivamus condimentum mi quis magna vehiculo sagittis. Donec at arcu sed nunc sodales posuere. Vestibulum scelerisque id eros non lacinia. Mauris eu risus euismod, congue sapien quis, fermentum felis.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, felis ut porttitor convallis, velit nisi fringilla nunc, nec malesuada libero nulla sit amet neque. Ut et velit a sapien facilisis viverra.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Секція 3: Модальне вікно - емейл</h2>
+            <button id="openModalBtn" class="btn">Підписатися</button>
+        </section>
+    </main>
+
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-content">
+            <form>
+                <label for="email">Введіть вашу електронну пошту:</label>
+                <div class="form-group">
+                    <input type="email" id="email" required placeholder="">
+                    <button type="submit" class="btn-submit">Зберегти</button>
+                    <div class="tooltip">Please fill out this field.</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
