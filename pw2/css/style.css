@@ -1,0 +1,475 @@
+/* =========================================================
+   Практична робота №2 — Верстка лендінгу «Pets» (Figma: Landing Page UI Kit)
+   Значення кольорів, шрифтів і відступів взято з панелі Properties макету
+   (фрейми «Pets 1280px» та «Pets 360px»).
+   ========================================================= */
+
+/* ---------- Змінні (Color styles / Text styles макету) ---------- */
+:root {
+    --color-text: #2D2D2D;      /* Text color */
+    --color-blue: #3366FF;      /* Blue */
+    --color-yellow: #F8D57E;    /* Yellow */
+    --color-white: #FFFFFF;
+    --bg-hero: #F7F5FD;         /* Header 1280px */
+    --bg-video: #F2FAF8;        /* Video 1280px */
+    --bg-card: #F7F7F7;         /* Feature card */
+    --bg-feedback: #E5F4F2;     /* User Feedback (Pets) */
+    --bg-cta: #FCFAF5;          /* Off white */
+
+    --font: 'Poppins', sans-serif;
+    --radius: 10px;
+    --side-padding: 100px;      /* відступ від краю фрейму 1280px */
+}
+
+/* ---------- Скидання стилів ---------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font);
+    font-size: 18px;            /* Body Text 18px - Regular */
+    line-height: 32px;
+    font-weight: 400;
+    color: var(--color-text);
+    background-color: var(--color-white);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- Кнопки (Primary CTA / Secondary CTA) ---------- */
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 50px;         /* 203x64 у макеті */
+    border-radius: var(--radius);
+    font-size: 18px;
+    line-height: 32px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(45, 45, 45, 0.15);
+}
+
+.btn--yellow {
+    min-width: 203px;
+    background-color: var(--color-yellow);
+    color: var(--color-text);
+}
+
+.btn--blue {
+    padding: 11px 50px;         /* 153x54 у макеті */
+    background-color: var(--color-blue);
+    color: var(--color-white);
+}
+
+.btn--small-text {
+    font-size: 16px;            /* «Contact us» — 16px / 24px */
+    line-height: 24px;
+    padding: 20px 52px;
+}
+
+/* ---------- Логотип ---------- */
+.logo {
+    display: flex;              /* Auto layout: horizontal, gap 10, center */
+    align-items: center;
+    gap: 10px;
+}
+
+.logo__text {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* ---------- Top Bar ---------- */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 var(--side-padding);
+}
+
+.top-bar__actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.top-bar__link:hover {
+    color: var(--color-blue);
+}
+
+/* ---------- Hero (Header 1280px) ---------- */
+.hero {
+    display: flex;
+    justify-content: center;
+    padding: 143px 20px;
+    background-color: var(--bg-hero);
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 769px;
+    text-align: center;
+}
+
+.hero__title {
+    font-size: 80px;            /* Headline 80px - SemiBold */
+    line-height: 90px;
+    font-weight: 600;
+}
+
+.hero__subtitle {
+    max-width: 466px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    opacity: 0.4;
+}
+
+/* ---------- Video ---------- */
+.video {
+    display: flex;
+    justify-content: center;
+    padding: 70px 20px;
+    background-color: var(--bg-video);
+}
+
+.video__frame {
+    position: relative;
+    width: 765px;
+    max-width: 100%;
+    aspect-ratio: 765 / 460;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.video__cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* напівпрозорий градієнт поверх фото (Fill: Linear) */
+.video__frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(45, 45, 45, 0.8) 0%, rgba(45, 45, 45, 0.5) 100%);
+    pointer-events: none;
+}
+
+.video__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+    padding-left: 8px;          /* оптичне вирівнювання трикутника */
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease;
+}
+
+/* у Figma трикутник (Polygon) повернутий на 90° */
+.video__play img {
+    transform: rotate(90deg);
+}
+
+.video__play:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* ---------- Logos ---------- */
+.logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+    padding: 127px 20px;
+}
+
+.logos__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px 70px;
+}
+
+/* ---------- Features ---------- */
+.features {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.features__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 320px);
+    gap: 40px;
+}
+
+.card {
+    display: flex;              /* Auto layout: vertical, gap 30 */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
+    min-height: 304px;
+    padding: 40px;
+    background-color: var(--bg-card);
+    border-radius: var(--radius);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(45, 45, 45, 0.08);
+}
+
+.card__text {
+    display: flex;              /* Auto layout: vertical, gap 15 */
+    flex-direction: column;
+    gap: 15px;
+    max-width: 236px;
+}
+
+.card__title {
+    font-size: 18px;            /* Secondary Body Text Title 18px - SemiBold */
+    line-height: 32px;
+    font-weight: 600;
+}
+
+.card__subtitle {
+    opacity: 0.5;
+}
+
+/* ---------- User Feedback ---------- */
+.feedback {
+    display: flex;
+    justify-content: center;
+    padding: 133px 20px;
+    background-color: var(--bg-feedback);
+}
+
+.feedback__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 662px;
+    text-align: center;
+}
+
+.feedback__icon {
+    margin-bottom: 20px;
+}
+
+.feedback__text {
+    font-weight: 600;
+}
+
+.feedback__author {
+    margin-top: 40px;
+    opacity: 0.5;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+    display: flex;              /* Auto layout: vertical, gap 40, center */
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 107px 20px;
+    background-color: var(--bg-cta);
+    text-align: center;
+}
+
+.cta__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.cta__title {
+    font-size: 80px;
+    line-height: 90px;
+    font-weight: 600;
+}
+
+.cta__subtitle {
+    max-width: 385px;
+    opacity: 0.5;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px var(--side-padding);
+}
+
+.footer__links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-weight: 600;
+}
+
+.footer__links a:hover {
+    color: var(--color-blue);
+}
+
+.footer__copy {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer__copy-sign {
+    line-height: 18px;
+}
+
+.footer__socials {
+    display: flex;
+    gap: 20px;
+}
+
+.footer__socials a {
+    display: block;
+    transition: opacity 0.2s ease;
+}
+
+.footer__socials a:hover {
+    opacity: 0.7;
+}
+
+.back-link {
+    padding: 0 0 24px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    opacity: 0.6;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   Адаптив: фрейм «Pets 360px»
+   ========================================================= */
+@media (max-width: 900px) {
+    :root {
+        --side-padding: 20px;
+    }
+
+    .top-bar {
+        height: 80px;
+    }
+
+    .top-bar__link {
+        display: none;
+    }
+
+    .btn--blue {
+        padding: 6px 24px;
+        font-size: 16px;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero__title,
+    .cta__title {
+        font-size: 50px;        /* Secondary Titles 50px - SemiBold */
+        line-height: 60px;
+    }
+
+    .hero__subtitle {
+        opacity: 0.5;
+    }
+
+    .video {
+        padding: 54px 20px;
+    }
+
+    .logos {
+        gap: 30px;
+        padding: 42px 20px;
+    }
+
+    .logos__row {
+        gap: 24px 32px;
+    }
+
+    .logos__row img {
+        height: 22px;
+        width: auto;
+    }
+
+    .features {
+        padding: 80px 20px;
+    }
+
+    .features__grid {
+        grid-template-columns: minmax(0, 320px);
+    }
+
+    .feedback {
+        padding: 80px 40px;
+    }
+
+    .cta {
+        padding: 80px 20px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 40px;
+    }
+
+    .footer__links {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}
